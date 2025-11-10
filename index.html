@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Ammi!</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load custom Google Fonts for a personal feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply custom fonts */
+        body {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* This class will be used for the special script/cursive font */
+        .font-cursive {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* --- Animation for page load --- */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-down {
+            animation: fadeInDown 1.5s ease-out forwards;
+        }
+
+        /* --- Animation for the pulsing heart --- */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.25);
+            }
+        }
+        .heartbeat {
+            animation: pulse 2s infinite;
+            display: inline-block; /* Required for transform */
+        }
+
+        /* --- Animations for scrolling --- */
+        /* This is the initial state for elements that will be revealed */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s, transform 0.8s;
+            /* This makes the animation "bounce" a little */
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* This is the final state after the element is in view */
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-rose-50 text-slate-800 antialiased">
+
+    <!-- Main container with a max-width for readability and centered -->
+    <div class="container max-w-3xl mx-auto p-5 sm:p-12">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12 fade-in-down">
+            <h1 class="font-cursive text-6xl sm:text-8xl text-rose-600">Happy 51st Birthday</h1>
+            <p class="text-4xl sm:text-6xl font-cursive text-rose-500 mt-2">Dearest Ammi</p>
+            <div class="text-5xl mt-8 heartbeat">💖</div>
+        </header>
+
+        <!-- Poem Section -->
+        <!-- Each section is a "card" with a shadow and rounded corners -->
+        <section class="mb-12 bg-white shadow-2xl rounded-3xl p-8 sm:p-12 reveal">
+            <h2 class="font-cursive text-5xl text-rose-600 mb-8 text-center">A Poem For You</h2>
+            <!-- 
+              The 'space-y-5' class adds margin between each <p> tag (stanza).
+              'leading-relaxed' increases line height for better readability.
+            -->
+            <div class="space-y-5 text-lg text-gray-700 leading-relaxed">
+                <p>
+                    Today the world shines extra bright, 🌟<br>
+                    Bathed in a warm and gentle light. ✨<br>
+                    It celebrates, in joyful cheer, 🎉<br>
+                    The day that you first graced us here.
+                </p>
+                <p>
+                    I still remember nights gone by,<br>
+                    You’d read me stories softly, 📖 lullaby.<br>
+                    My uniform was pressed just right, 👔<br>
+                    Shoes polished, shining in the light. 👟<br>
+                    I’d say, “I’ll do it, promise, Ammi!”<br>
+                    But by morning — you’d done it already. 🙏
+                </p>
+                <p>
+                    I’d fight you on my lunch some days, 🥪<br>
+                    And claim I wasn’t hungry anyway.<br>
+                    But you’d sneak it in, without delay,<br>
+                    A secret love, miles away. 🦸‍♀️
+                </p>
+                <p>
+                    Your cheese omelette was unmatched, 🍳<br>
+                    A flavor of care no recipe’s hatched.<br>
+                    The chai and roti you make with love ☕️<br>
+                    Could humble cafés the world dreams of.
+                </p>
+                <p>
+                    You never eat until we’re fed,<br>
+                    Your love in every meal is spread. ❤️<br>
+                    You still call me, just to say,<br>
+                    “My child, have you eaten today?” 📞
+                </p>
+                <p>
+                    You taught me strength through sabr’s grace, 🤲<br>
+                    To trust Allah in every place.<br>
+                    You make duaa for me each day,<br>
+                    Even when I forget to pray.
+                </p>
+                <p>
+                    You scold about wasting cash 💸 — then smile,<br>
+                    And buy me something all the while. 🎁<br>
+                    You made me think I’d never fail,<br>
+                    Believed in me, and set my sail. 🚀
+                </p>
+                <p>
+                    You’ve given more than words can show,<br>
+                    More than I’ll ever fully know. 🕊️<br>
+                    There’ll never be another you —<br>
+                    My life’s biggest blessing, always true. 💎
+                </p>
+                <p class="font-bold text-xl text-center text-rose-600">
+                    Thank you, Ammi, for all you are,<br>
+                    My home, my comfort, my guiding star. ⭐<br>
+                    Happy Birthday! 🎂
+                </p>
+            </div>
+        </section>
+
+        <!-- Family Photo Section -->
+        <section class="mb-12 bg-white shadow-2xl rounded-3xl p-6 sm:p-8 reveal">
+            <h2 class="font-cursive text-5xl text-rose-600 mb-6 text-center">Our Guiding Star</h2>
+            <div class="w-full overflow-hidden rounded-2xl shadow-lg">
+                <!-- 
+                  !!! IMPORTANT !!!
+                  To add your photo:
+                  1. Click the "Edit" button in the top right.
+                  2. Find this 'img' tag below.
+                  3. Replace the 'src' URL ("https://placehold.co...") with a URL to your family photo.
+                     (You can upload your photo to a site like imgbb.com to get a direct link).
+                -->
+                <img src="./Family.jpeg" 
+                     alt="A placeholder for a family photo. You can replace this!"
+                     class="w-full h-auto object-cover"
+                     onerror="this.src='https://placehold.co/800x600/fecdd3/be123c?text=Image+Failed+to+Load'; this.alt='Error loading image.'">
+            </div>
+            <p class="text-center text-gray-600 italic mt-5 text-lg">"The heart of our family beats because of you."</p>
+        </section>
+
+
+        <!-- 51 Reasons Section -->
+        <section class="mb-12 bg-white shadow-2xl rounded-3xl p-8 sm:p-12 reveal">
+            <h2 class="font-cursive text-5xl sm:text-6xl text-rose-600 mb-10 text-center">51 Reasons I'm Blessed</h2>
+            <!-- A custom-styled ordered list -->
+            <ol class="list-none space-y-8">
+                
+                <!-- Each reason will animate in as you scroll -->
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">1</span>
+                    <p class="text-xl leading-relaxed">You love without limits - no conditions, no expectations, just love.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">2</span>
+                    <p class="text-xl leading-relaxed">You always put everyone’s happiness before your own.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">3</span>
+                    <p class="text-xl leading-relaxed">You make every place feel like home - even a simple kitchen smells like heaven when you’re in it.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">4</span>
+                    <p class="text-xl leading-relaxed">You forgive instantly, even when you have every right not to.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">5</span>
+                    <p class="text-xl leading-relaxed">You never eat until everyone else has, and that love fills every meal.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">6</span>
+                    <p class="text-xl leading-relaxed">You somehow know I’m upset before I even say a word.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">7</span>
+                    <p class="text-xl leading-relaxed">You love quietly - in small acts that speak louder than any words.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">8</span>
+                    <p class="text-xl leading-relaxed">You never stop praying for me, even when I forget to pray for myself.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">9</span>
+                    <p class="text-xl leading-relaxed">You love with patience, not pressure.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">10</span>
+                    <p class="text-xl leading-relaxed">You see the best in me when I can’t see it myself.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">11</span>
+                    <p class="text-xl leading-relaxed">You are the heart of our family - everything beats because of you.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">12</span>
+                    <p class="text-xl leading-relaxed">You whisper “Insha’Allah” before every hope, and it always feels safer after that.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">13</span>
+                    <p class="text-xl leading-relaxed">You’ve taught me to trust Allah even when life feels heavy.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">14</span>
+                    <p class="text-xl leading-relaxed">You make food that tastes like comfort itself.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">15</span>
+                    <p class="text-xl leading-relaxed">You can fix torn clothes, broken hearts, and bad days with the same gentle hands.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">16</span>
+                    <p class="text-xl leading-relaxed">You have eyes that find things no one else can see - especially missing socks.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">17</span>
+                    <p class="text-xl leading-relaxed">You manage to do ten things at once and still ask, “Do you need anything, beta?”</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">18</span>
+                    <p class="text-xl leading-relaxed">You make everything look effortless, even when you’re exhausted.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">19</span>
+                    <p class="text-xl leading-relaxed">You taught me to be honest, even when it costs me.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">20</span>
+                    <p class="text-xl leading-relaxed">You showed me that respect is earned by how you treat people, not what you own.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">21</span>
+                    <p class="text-xl leading-relaxed">You taught me that silence is sometimes wiser than winning an argument.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">22</span>
+                    <p class="text-xl leading-relaxed">You taught me to stand tall but bow my head in gratitude.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">23</span>
+                    <p class="text-xl leading-relaxed">You showed me that helping others is never a waste.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">24</span>
+                    <p class="text-xl leading-relaxed">You taught me to say thank you - to people and to life.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">25</span>
+                    <p class="text-xl leading-relaxed">You’ve taught me to never stop learning, no matter how old I get.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">26</span>
+                    <p class="text-xl leading-relaxed">You say, “I’ll just make something simple” - and then cook a full feast.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">27</span>
+                    <p class="text-xl leading-relaxed">You have a sixth sense for when I’m lying - it’s terrifying and amazing.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">28</span>
+                    <p class="text-xl leading-relaxed">You’ve sacrificed more than I’ll ever know, and you never remind anyone of it.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">29</span>
+                    <p class="text-xl leading-relaxed">You always say, “Don’t waste money!” right before buying something for me.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">30</span>
+                    <p class="text-xl leading-relaxed">You never forget to say “Take care” - even if it’s just a 2-minute call.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">31</span>
+                    <p class="text-xl leading-relaxed">You taught me to trust Allah’s timing.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">32</span>
+                    <p class="text-xl leading-relaxed">You carry everyone’s worries but still smile.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">33</span>
+                    <p class="text-xl leading-relaxed">You never show how tired you are - even when you should rest.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">34</span>
+                    <p class="text-xl leading-relaxed">You make me want to become a better person.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">35</span>
+                    <p class="text-xl leading-relaxed">You always welcome me home the same way - like I never left.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">36</span>
+                    <p class="text-xl leading-relaxed">You never let me leave without saying Allah Hafiz.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">37</span>
+                    <p class="text-xl leading-relaxed">Your love is the reason I am who I am today.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">38</span>
+                    <p class="text-xl leading-relaxed">You showed me that true strength is in sabr, not in shouting.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">39</span>
+                    <p class="text-xl leading-relaxed">You made me believe that small prayers can change big things.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">40</span>
+                    <p class="text-xl leading-relaxed">Your hugs fix everything - no medicine needed.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">41</span>
+                    <p class="text-xl leading-relaxed">You laugh at your own jokes and somehow make them funnier.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">42</span>
+                    <p class="text-xl leading-relaxed">You scold me, then two minutes later ask if I’ve eaten.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">43</span>
+                    <p class="text-xl leading-relaxed">You can turn a normal evening into a family festival.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">44</span>
+                    <p class="text-xl leading-relaxed">You remember every tiny detail about what I like - even the smallest things.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">45</span>
+                    <p class="text-xl leading-relaxed">You call me just to hear my voice and pretend you had a question.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">46</span>
+                    <p class="text-xl leading-relaxed">You always make me feel like your proudest achievement.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">47</span>
+                    <p class="text-xl leading-relaxed">You say “I’m fine” when you’re clearly not - just so we don’t worry.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">48</span>
+                    <p class="text-xl leading-relaxed">You’re the only one who can calm me down with a single word: “Beta.”</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">49</span>
+                    <p class="text-xl leading-relaxed">You’ve given me faith, comfort, courage, and home - all at once.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">50</span>
+                    <p class="text-xl leading-relaxed">You are my first home, my biggest supporter, and my forever best friend.</p>
+                </li>
+                
+                <li class="flex items-start space-x-4 reveal">
+                    <span class="flex-shrink-0 bg-rose-500 text-white rounded-full h-9 w-9 flex items-center justify-center font-bold text-lg shadow-md mt-0.5">51</span>
+                    <p class="text-xl leading-relaxed">You’re the best mother in the world - not because you do everything perfectly, but because you do everything with love. ❤️</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Closing Quote Section -->
+        <section class="text-center p-8 reveal">
+            <blockquote class="text-2xl sm:text-3xl italic text-rose-800 leading-relaxed font-semibold">
+                “Mama, these 51 reasons are only a glimpse of what makes you the best mother in the world. The rest can’t fit on paper — they live in my heart.”
+            </blockquote>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12 pb-6 text-slate-500 reveal">
+            <p>Made with endless love.</p>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript for Scroll Animations -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Set up the Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                // Loop over the entries
+                entries.forEach(entry => {
+                    // If the element is in view
+                    if (entry.isIntersecting) {
+                        // Add the 'active' class to trigger the animation
+                        entry.target.classList.add('active');
+                        // Optional: Stop observing the element once it's visible
+                        // observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.01 // Trigger when 1% of the element is visible (more sensitive for mobile)
+            });
+
+            // Get all elements with the '.reveal' class
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            // Observe each '.reveal' element
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
